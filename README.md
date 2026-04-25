@@ -1,28 +1,25 @@
-# 🛡️ Détection de Fraude par Carte Bancaire
+Here is the English translation of your project description, perfectly formatted for your GitHub **README.md**.
 
-Ce projet utilise le Machine Learning pour identifier des transactions frauduleuses à partir d'un dataset hautement déséquilibré. L'objectif est de maximiser la détection des fraudes (Recall) tout en minimisant les fausses alertes.
+---
 
-## 📊 Analyse des Données (EDA)
-* **Dataset :** Crédit Card Fraud Detection (Kaggle).
-* **Déséquilibre :** Les fraudes représentent seulement **0,17%** des transactions.
-* **Anonymisation :** Les variables $V_1$ à $V_{28}$ sont issues d'une **Analyse en Composantes Principales (PCA)** pour protéger la confidentialité bancaire.
+#  Credit Card Fraud Detection
 
+This project utilizes Machine Learning to identify fraudulent transactions from a highly imbalanced dataset. The primary objective is to maximize fraud detection (**Recall**) while minimizing false alarms.
 
+##  Data Analysis (EDA)
+* **Dataset:** Credit Card Fraud Detection (Kaggle).
+* **Imbalance:** Fraudulent transactions represent only **0.17%** of all transactions.
+* **Anonymization:** Features $V_1$ to $V_{28}$ are the result of a **Principal Component Analysis (PCA)** transformation, implemented to protect banking confidentiality.
 
-## 🛠️ Pipeline Technique
-Pour résoudre les défis du dataset, j'ai mis en place :
-1. **Prétraitement :** Mise à l'échelle des montants avec `StandardScaler`.
-2. **Équilibrage :** Application de **SMOTE** (Synthetic Minority Over-sampling Technique) pour générer des exemples synthétiques de fraudes.
-3. **Modélisation :** - **XGBoost :** Pour sa rapidité et sa précision sur les données structurées.
-   - **MLP (Réseau de Neurones) :** Pour capturer des relations complexes.
+## 🛠️ Technical Pipeline
+To address the challenges of this specific dataset, I implemented the following pipeline:
+1. **Preprocessing:** Feature scaling of transaction amounts using `StandardScaler`.
+2. **Balancing:** Application of **SMOTE** (Synthetic Minority Over-sampling Technique) to generate synthetic fraud examples and balance the training set.
+3. **Modeling:** - **XGBoost:** For its speed and high accuracy on structured/tabular data.
+   - **MLP (Multi-Layer Perceptron):** A neural network approach to capture complex non-linear relationships.
 
-## 🔍 Explicabilité du Modèle (SHAP)
-L'utilisation de **SHAP (SHapley Additive exPlanations)** permet d'ouvrir la "boîte noire" du modèle. On peut identifier quelles variables ($V_{17}$, $V_{14}$, etc.) ont le plus d'influence sur la classification d'une transaction comme frauduleuse.
+##  Model Explainability (SHAP)
+The use of **SHAP (SHapley Additive exPlanations)** allows us to open the "black box" of the model. We can identify which specific variables ($V_{17}$, $V_{14}$, etc.) have the most significant influence on classifying a transaction as fraudulent.
 
-![Analyse SHAP](resultat_shap.png)
+![SHAP Analysis](resultat_shap.png)
 
-## 🚀 Installation et Usage
-1. Téléchargez le dataset `creditcard.csv` sur [Kaggle](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud).
-2. Installez les dépendances :
-   ```bash
-   pip install -r requirements.txt
