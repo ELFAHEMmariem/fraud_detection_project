@@ -1,0 +1,17 @@
+# Ignorer les données (trop lourdes pour GitHub)
+*.csv
+*.zip
+
+# Ignorer les fichiers temporaires Python
+__pycache__/
+*.py[cod]
+
+# Ignorer les dossiers d'environnements virtuels
+venv/
+.env
+
+# Ignorer les fichiers de notebooks temporaires
+.ipynb_checkpoints/
+
+# Ignorer les résultats volumineux (optionnel)
+# *.pkl  <-- si tu sauvegardes tes modèles entraînés
